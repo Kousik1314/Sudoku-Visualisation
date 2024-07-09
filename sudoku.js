@@ -134,11 +134,6 @@ function removeRandomCells(board, count) {
     }
 }
 
-function getUserInput() {
-    board = getUserBoard();
-    initializeGrid();
-}
-
 function getUserBoard() {
     const userBoard = [];
     for (let i = 0; i < 9; i++) {
@@ -173,4 +168,9 @@ function validateBoard(board) {
         }
     }
     return true;
+}
+
+function clearGrid() {
+    board = Array.from({ length: 9 }, () => Array(9).fill(0));
+    initializeGrid();
 }

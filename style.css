@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #161515;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 75px;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeIn 2s;
+    background: linear-gradient(45deg, #dee20d, #00c9e4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(77, 77, 76, 0.4);
+}
+
+#controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 8px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #feb47b, #ff7e5f);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+td {
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    background: rgb(255, 255, 255);
+    color: rgb(56, 17, 228);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+td:hover {
+    background: linear-gradient(135deg, #ced171, #f0f2f3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#message {
+    text-align: center;
+    font-size: 18px;
+    color: red;
+    margin-top: 10px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #ccc;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
