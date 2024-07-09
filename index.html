@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver Visualization</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            margin-top: 20px;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border: 1px solid black;
+            font-size: 24px;
+            transition: background-color 0.2s;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        #message {
+            text-align: center;
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <table id="sudoku-grid"></table>
+    <div id="message"></div>
+    <button onclick="generateRandom()">Generate Random</button>
+    <button onclick="getUserInput()">Get Numbers</button>
+    <button onclick="startVisualization()">Start Visualization</button>
+    <script src="sudoku.js"></script>
+</body>
+</html>
