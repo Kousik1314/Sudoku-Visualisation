@@ -1,0 +1,156 @@
+:root {
+    --bg-main: #1a1a1a;
+    --bg-secondary: #2c2c2c;
+    --bg-cell: #252525;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --border-grid: #00bcd4;
+    --border-cell: #444444;
+    --accent-color: #00bcd4;
+    --accent-hover: #00e5ff;
+    --error-color: #ff5252;
+    --success-color: #69f0ae;
+    --given-bg: #333333;
+    --focus-bg: #3a4a5a;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--bg-secondary);
+    padding: clamp(20px, 5vw, 40px);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-cell);
+    text-align: center;
+    width: 100%;
+    max-width: 550px;
+}
+
+h1 {
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+#sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    border: 3px solid var(--border-grid);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--border-cell);
+    gap: 1px;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+    font-size: clamp(16px, 4vw, 24px);
+    font-weight: 500;
+    text-align: center;
+    color: var(--accent-color);
+    background-color: var(--bg-cell);
+    outline: none;
+    transition: background-color 0.2s;
+    caret-color: var(--accent-color);
+}
+
+.cell.border-right { box-shadow: inset -2px 0 0 var(--border-grid); }
+.cell.border-bottom { box-shadow: inset 0 -2px 0 var(--border-grid); }
+.cell.border-right.border-bottom { box-shadow: inset -2px 0 0 var(--border-grid), inset 0 -2px 0 var(--border-grid); }
+
+.cell:focus { background-color: var(--focus-bg); }
+
+.given-number {
+    color: var(--text-primary);
+    background-color: var(--given-bg);
+    font-weight: 700;
+}
+
+.solved-number {
+    color: var(--accent-color);
+    background-color: #263c41;
+    animation: pop-in 0.3s ease-out;
+}
+
+@keyframes pop-in {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.correct { color: var(--success-color); }
+
+.incorrect {
+    color: var(--error-color);
+    background-color: rgba(255, 82, 82, 0.15);
+}
+
+.controls, .difficulty-controls {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--accent-color);
+    color: #121212;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover:not(:disabled) {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+}
+
+button:disabled {
+    background-color: #555;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    min-height: 25px;
+}
+.status-success { color: var(--success-color); }
+.status-error { color: var(--error-color); }
+
+select#difficulty {
+    background-color: var(--bg-cell);
+    color: var(--text-primary);
+    border: 1px solid var(--border-cell);
+    border-radius: 5px;
+    padding: 8px;
+}
