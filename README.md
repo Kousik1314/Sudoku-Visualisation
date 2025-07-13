@@ -2,7 +2,7 @@
 
 A sleek, modern, and fully-responsive Sudoku web application built with vanilla JavaScript, HTML, and CSS. This project provides an interactive interface for playing and solving Sudoku puzzles, featuring a beautiful dark theme that's easy on the eyes.
 
-
+Demo Link - [Link](https://kousik1314.github.io/Sudoku-Visualisation/)
 
 ## Features
 
